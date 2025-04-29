@@ -1,66 +1,81 @@
-var x = 10;
-var y = 100 + 200 * Math.random();
-let vx = 0;
-let vy = 0;
-let acceleration = 0;
 let shot = false;
+let basket = false;
+let Basketball = function () {
+  this.x = 370;
+  this.y = 160;
+  this.vx = 0;
+  this.vy = 0;
+  this.acceleration = 0;
 
+  this.update = function () {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += this.acceleration;
+    this.acceleration = 0.5;
+    shot = true;
+  };
+
+  this.draw = function () {
+    image(basketball, this.x, this.y, 20, 20);
+  };
+};
 function preload() {
-  rim = loadImage(
-    "https://media.istockphoto.com/id/1409969841/vector/basketball-basket-hoop-and-net-on-the-side-3x3-basketball-sport-equipment-summer-games.jpg?s=612x612&w=0&k=20&c=tAhTbRaPmwSMXOvjIfY-im07NHvOA-4EXfWgKXrd0Tk="
-  );
-  basketball = loadImage("basketball.jpg");
+  Rim = loadImage("Rim.jpg");
+  basketball = loadImage("Basketball.png");
 }
+
+let ball;
+let bg;
 function setup() {
-  createCanvas(400, 400);
-  text("Level 1", 200, 20);
+  createCanvas(400, 300);
+  ball = new Basketball();
+  bg = loadImage("Background3.jpg");
+  bg.resize(400,400);
 }
 
 function draw() {
-  background("white");
-  if (x > 355 && vx > 0 && y < 200) {
-    vx = -vx;
+  background(bg);
+  
+  if (shot) {
+    ball.update();
   }
-
-  x = x + vx;
-  y = y + vy;
-  vy += acceleration;
-  let makedistance = Math.sqrt((315 - x) ** 2 + (190 - y) ** 2);
-  if (makedistance <= 23) {
-    text("Congratulations you passed level 1!", 50, 200);
+  ball.draw();
+let makedistance = Math.sqrt((290 - ball.x) ** 2 + (100 - ball.y) ** 2);
+  if (makedistance <= 15) {
+    basket = true;
   } else {
   }
-  image(rim, 275, 150, 130, 120);
-  image(basketball, x, y, 40, 40);
-  fill("green");
-  let rimdistance1 = Math.sqrt((285 - x) ** 2 + (170 - y) ** 2);
-  if (rimdistance1 <= 20) {
-    vx = -vx;
+   if (shot && basket) {
+     
+  
   }
-  let rimdistance2 = Math.sqrt((375 - x) ** 2 + (180 - y) ** 2);
-  if (rimdistance2 <= 33) {
-    vx = 0.5*(x-375);
-    vy = 0.5*(y - 175);
+    let rimdistance1 = Math.sqrt((203 - ball.x) ** 2 + (70 - ball.y) ** 2);
+  if (rimdistance1 <= 5) {
+    ball.vx = -ball.vx;
   }
-  circle(375, 175, 30);
-  circle(285, 170, 10);
-  circle(315, 190, 23);
+  //circle(290, 100, 23);
+  circle(203, 70, 5);
 }
 function mousePressed() {
-  if (!shot) {
-    acceleration = 0.5;
-    vx = mouseX / 15;
-    vy = (mouseY - 200) / 15;
-    shot = true;
+  if (shot == false) {
+    ball.vx = (mouseX-ball.x)/15;
+    ball.vy = (mouseY-ball.y)/15;
+    shot = true; 
+   
   } else {
-    vx = 0;
-    vy = 0;
-    x = 20;
-    y = 100 + 200 * Math.random();
+ball.update();
     acceleration = 0;
     shot = false;
+  ball.x = 370;
+  ball.y = 160;
+  ball.vx = 0;
+  ball.vy = 0;
+    
   }
 }
-//Get letters to stay
-//Get rim to bounce and not vibrate and use trig to point distance and get back rim working
-//Add interesting background with crowd
+//Add ellipses in background to add fan movement
+//Get net to move
+//Fix rim bounce
+//Add fading line behind ball
+//Get level to link to next once finished
+//Get backboard and back rim to bounce
