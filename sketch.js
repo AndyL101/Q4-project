@@ -1,3 +1,4 @@
+
 let shot = false;
 let basket = false;
 let Crowd;
@@ -54,6 +55,17 @@ function setup() {
 }
 let level = 1;
 function draw() {
+  if (level == 1){
+    level1();
+  }else if (level == 2){
+      level2();
+  } else if(level == 3){
+    level3();
+  } else if(level == 4){
+    level4();
+  } else if(level ==5){
+    level5();
+  }
   background("green");
   image(Wood, 0, 123, 400, 400);
   stroke("white");
@@ -107,6 +119,7 @@ function draw() {
   }
   if (basket) {
     text("MADE", 200, 170);
+    level = level + 1;
   }
   if (shot && basket) {
   }
@@ -150,7 +163,7 @@ function mousePressed() {
     ball.vy = (mouseY - ball.y) / 15;
     shot = true;
   } else {
-    ball.update();
+    ball.update();  
     acceleration = 0;
     shot = false;
     ball.x = 0;
@@ -159,6 +172,16 @@ function mousePressed() {
     ball.vy = 0;
     basket = false;
     ball.history = [];
+
+  }
+}
+function level1(){
+  stroke("white");
+  circle(300, 300, 40);
+    let bounce1 = Math.sqrt((200 - ball.x) ** 2 + (200 - ball.y) ** 2);
+  if (bounce1 <= 40) {
+    ball.vx = 0.3 * (ball.x - 375);
+    ball.vy = 0.3 * (ball.y - 175);
   }
 }
 //Add ellipses in background to add fan movement
@@ -166,4 +189,3 @@ function mousePressed() {
 //Fix rim bounce
 //Add fading line behind ball
 //Get level to link to next once finished
-
