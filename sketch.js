@@ -56,12 +56,12 @@ function setup() {
 }
 level = 1;
 function draw() {
-    textAlign(TOP,TOP);
+  textAlign(TOP, TOP);
   textSize(20);
- 
-  if (frameCount % 60 == 0 && stopwatch >= 0 && timerisrunning){
+
+  if (frameCount % 60 == 0 && stopwatch >= 0 && timerisrunning) {
     stopwatch++;
-    console.log(frameCount, stopwatch);    
+    console.log(frameCount, stopwatch);
   }
 
   background("green");
@@ -104,14 +104,14 @@ function draw() {
   circle(40, 220, 100, 20);
   fill("white");
   let makedistance = Math.sqrt((364 - ball.x) ** 2 + (190 - ball.y) ** 2);
-  if (makedistance <= 8) {
+  if (makedistance <= 9) {
     if (basket == false) {
       level = level + 1;
     }
     basket = true;
   } else {
   }
-  circle(364, 190, 8);
+  //circle(364, 190, 8);
   let makedistance2 = Math.sqrt((371 - ball.x) ** 2 + (191 - ball.y) ** 2);
   if (makedistance2 <= 9) {
     if (basket == false) {
@@ -120,8 +120,8 @@ function draw() {
     basket = true;
   } else {
   }
-  circle(371, 191, 9);
-  let makedistance3 = Math.sqrt((364 - ball.x) ** 2 + (197 - ball.y) ** 2);
+  //circle(371, 191, 9);
+  let makedistance3 = Math.sqrt((367 - ball.x) ** 2 + (195 - ball.y) ** 2);
   if (makedistance3 <= 9) {
     if (basket == false) {
       level = level + 1;
@@ -129,6 +129,15 @@ function draw() {
     basket = true;
   } else {
   }
+  //let makedistance4 = Math.sqrt((200 - ball.x) ** 2 + (200 - ball.y) ** 2);
+  //if (makedistance4 <= 50) {
+  //if (basket == false) {
+  //level = level + 1;
+  // }
+  //circle(200,200, 50);
+  //basket = true;
+  //} else {
+  //}
   if (basket == true) {
   }
   if (basket) {
@@ -137,13 +146,13 @@ function draw() {
     text("MADE", 200, 170);
   }
   let rimdistance1 = Math.sqrt((352 - ball.x) ** 2 + (178 - ball.y) ** 2);
-  if (rimdistance1 <= 9) {
+  if (rimdistance1 <= 8) {
     ball.vx = -ball.vx;
   }
 
   let BBdistance1 = Math.sqrt((386 - ball.x) ** 2 + (166 - ball.y) ** 2);
   if (BBdistance1 <= 20) {
-    ball.vx = -0.7*ball.vx;
+    ball.vx = -0.7 * ball.vx;
   }
   let rimdistance2 = Math.sqrt((382 - ball.x) ** 2 + (182 - ball.y) ** 2);
   if (rimdistance2 <= 10) {
@@ -158,11 +167,11 @@ function draw() {
   let BBdistance2 = Math.sqrt((392 - ball.x) ** 2 + (144 - ball.y) ** 2);
   if (BBdistance2 <= 19) {
     //ball.vx = -0.7*ball.vx;
-    //ball.vx = -0.7*ball.vy;
-    ball.vx = 0.3 * (ball.x - 375);
-    ball.vy = 0.3 * (ball.y - 175);
+    ball.vy = -0.7 * ball.vy;
+    //ball.vx = 0.3 * (ball.x - 375);
+    //ball.vy = 0.3 * (ball.y - 175);
   }
-circle(392,144, 20);
+  //circle(392,144, 20);
   //let rimdistance4 = Math.sqrt((394 - ball.x) ** 2 + (148 - ball.y) ** 2);
   //if (rimdistance4 <= 10) {
   //ball.vx = 0.3 * (ball.x - 375);
@@ -216,53 +225,57 @@ circle(392,144, 20);
   if (netbounce12 <= 13) {
     ball.vx = -ball.vx;
   }
-    let netbounce13 = Math.sqrt((343 - ball.x) ** 2 + (193 - ball.y) ** 2);
+  let netbounce13 = Math.sqrt((343 - ball.x) ** 2 + (193 - ball.y) ** 2);
   if (netbounce13 <= 13) {
     ball.vx = -ball.vx;
   }
-    let netbounce14 = Math.sqrt((343 - ball.x) ** 2 + (190 - ball.y) ** 2);
+  let netbounce14 = Math.sqrt((343 - ball.x) ** 2 + (190 - ball.y) ** 2);
   if (netbounce14 <= 13) {
     ball.vx = -ball.vx;
   }
-    let netbounce15 = Math.sqrt((343 - ball.x) ** 2 + (187 - ball.y) ** 2);
+  let netbounce15 = Math.sqrt((343 - ball.x) ** 2 + (187 - ball.y) ** 2);
   if (netbounce15 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce16 = Math.sqrt((344 - ball.x) ** 2 + (183 - ball.y) ** 2);
+  let netbounce16 = Math.sqrt((344 - ball.x) ** 2 + (183 - ball.y) ** 2);
   if (netbounce16 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce17 = Math.sqrt((343 - ball.x) ** 2 + (179 - ball.y) ** 2);
+  let netbounce17 = Math.sqrt((343 - ball.x) ** 2 + (179 - ball.y) ** 2);
   if (netbounce17 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce18 = Math.sqrt((343 - ball.x) ** 2 + (175 - ball.y) ** 2);
+  let netbounce18 = Math.sqrt((343 - ball.x) ** 2 + (175 - ball.y) ** 2);
   if (netbounce18 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce19 = Math.sqrt((343 - ball.x) ** 2 + (199 - ball.y) ** 2);
+  let netbounce19 = Math.sqrt((343 - ball.x) ** 2 + (199 - ball.y) ** 2);
   if (netbounce19 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce20 = Math.sqrt((343 - ball.x) ** 2 + (204 - ball.y) ** 2);
+  let netbounce20 = Math.sqrt((343 - ball.x) ** 2 + (204 - ball.y) ** 2);
   if (netbounce20 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce21 = Math.sqrt((343 - ball.x) ** 2 + (209 - ball.y) ** 2);
+  let netbounce21 = Math.sqrt((343 - ball.x) ** 2 + (209 - ball.y) ** 2);
   if (netbounce21 <= 13) {
     ball.vx = -ball.vx;
   }
-      let netbounce22 = Math.sqrt((343 - ball.x) ** 2 + (213 - ball.y) ** 2);
+  let netbounce22 = Math.sqrt((343 - ball.x) ** 2 + (213 - ball.y) ** 2);
   if (netbounce22 <= 13) {
     ball.vx = -ball.vx;
   }
-  let netbounce23 =  Math.sqrt((345 - ball.x) ** 2 + (184 - ball.y) ** 2);
-  if(netbounce23 <= 15){
+  let netbounce23 = Math.sqrt((345 - ball.x) ** 2 + (184 - ball.y) ** 2);
+  if (netbounce23 <= 15) {
+    ball.vx = -ball.vx;
+  }
+  let netbounce24 = Math.sqrt((353 - ball.x) ** 2 + (182 - ball.y) ** 2);
+  if (netbounce24 <= 15) {
     ball.vx = -ball.vx;
   }
   //circle(345, 184, 15);
   //circle(364, 190, 10);
-  //circle(364, 197, 10);
+  //circle(367, 195, 10);
   //circle(350, 178, 5);
   //circle(386, 166, 23);
   //circle(386, 162, 23);
@@ -301,20 +314,26 @@ circle(392,144, 20);
   } else if (level == 4) {
     level4();
   } else if (level == 5) {
-      level5();
-    } else if (level == 6) {
-      level6(); 
-    } else if (level == 7) {
-      level7(); 
-    } else if (level == 8) {
-      level8();
-    } else if (level == 9) {
-      leveldone();
-    }
-  
+    level5();
+  } else if (level == 6) {
+    level6();
+  } else if (level == 7) {
+    level7();
+  } else if (level == 8) {
+    level8();
+  } else if (level == 9) {
+    level9();
+  } else if (level == 10) {
+    level10();
+  } else if (level == 11) {
+    level11();
+  } else if (level == 12) {
+    leveldone();
+  }
+
   text("Timer : ", 240, 5);
   text(stopwatch, 320, 5);
-} // End of draw() ??
+} // End of draw()
 
 function mousePressed() {
   if (shot == false) {
@@ -334,12 +353,18 @@ function mousePressed() {
     } else if (level == 5) {
       level5();
     } else if (level == 6) {
-      level6(); 
+      level6();
     } else if (level == 7) {
-      level7(); 
-    } else if (level == 8){
+      level7();
+    } else if (level == 8) {
       level8();
-    } else if (level == 9){
+    } else if (level == 9) {
+      level9();
+    } else if (level == 10) {
+      level10();
+    } else if (level == 11) {
+      level11();
+    } else if (level == 12) {
       leveldone();
     }
 
@@ -358,8 +383,8 @@ function level1() {
   console.log(level);
 }
 function level2() {
-    text("Level:" + level, 105, 5);
-    console.log(level);
+  text("Level:" + level, 105, 5);
+  console.log(level);
   stroke("white");
   circle(200, 135, 30);
 
@@ -368,19 +393,25 @@ function level2() {
     ball.vx = 0.1 * (ball.x - 375);
     ball.vy = 0.1 * (ball.y - 175);
   }
-
 }
 let level3obstacley = 0;
 let level5obstacley = 0;
 let level6obstacley = 0;
 let level7obstacley = 0;
+let level8obstacley = 0;
+let level9obstacley = 0;
+let level10obstacley1 = 30;
+let level10obstacley2 = 350;
 let speedlevel3 = 10;
 let speedlevel5 = 13;
 let speedlevel6 = 16;
 let speedlevel7 = 16;
+let speedlevel8 = 16;
+let speedlevel9 = 16;
+let speedlevel10 = 16;
 function level3() {
-    text("Level:" + level, 105, 5);
-    console.log(level);
+  text("Level:" + level, 105, 5);
+  console.log(level);
   level3obstacley += speedlevel3;
   circle(200, level3obstacley, 30);
   if (level3obstacley > 380 || level3obstacley < 10) {
@@ -395,8 +426,8 @@ function level3() {
   }
 }
 function level4() {
-    text("Level:" + level, 105, 5);
-    console.log(level);
+  text("Level:" + level, 105, 5);
+  console.log(level);
   circle(100, 140, 30);
   let bounce2 = Math.sqrt((100 - ball.x) ** 2 + (140 - ball.y) ** 2);
   if (bounce2 <= 20) {
@@ -405,14 +436,14 @@ function level4() {
   }
 }
 function level5() {
-    text("Level:" + level, 105, 5);
-    console.log(level);
+  text("Level:" + level, 105, 5);
+  console.log(level);
   level5obstacley += speedlevel5;
   circle(100, level5obstacley, 30);
   if (level5obstacley > 380 || level5obstacley < 10) {
     speedlevel5 = -1 * speedlevel5;
   }
-let level5obstaclebounce1 = Math.sqrt(
+  let level5obstaclebounce1 = Math.sqrt(
     (100 - ball.x) ** 2 + (level5obstacley - ball.y) ** 2
   );
   if (level5obstaclebounce1 <= 20) {
@@ -420,10 +451,10 @@ let level5obstaclebounce1 = Math.sqrt(
     ball.vy = 0.1 * (ball.y - 175);
   }
 }
-function level6(){
-    text("Level:" + level, 105, 5);
-    console.log(level);
-    level6obstacley += speedlevel6;
+function level6() {
+  text("Level:" + level, 105, 5);
+  console.log(level);
+  level6obstacley += speedlevel6;
   circle(200, level6obstacley, 30);
   if (level6obstacley > 380 || level6obstacley < 10) {
     speedlevel6 = -1 * speedlevel6;
@@ -434,7 +465,7 @@ function level6(){
     ball.vx = 0.1 * (ball.x - 375);
     ball.vy = 0.1 * (ball.y - 175);
   }
-let level6obstaclebounce1 = Math.sqrt(
+  let level6obstaclebounce1 = Math.sqrt(
     (200 - ball.x) ** 2 + (level6obstacley - ball.y) ** 2
   );
   if (level6obstaclebounce1 <= 20) {
@@ -442,15 +473,15 @@ let level6obstaclebounce1 = Math.sqrt(
     ball.vy = 0.1 * (ball.y - 175);
   }
 }
-function level7(){
-    text("Level:" + level, 105, 5);
+function level7() {
+  text("Level:" + level, 105, 5);
   console.log(level);
   level7obstacley += speedlevel7;
-   circle(200, level7obstacley, 30);
-if (level7obstacley > 380 || level7obstacley < 10) {
+  circle(200, level7obstacley, 30);
+  if (level7obstacley > 380 || level7obstacley < 10) {
     speedlevel7 = -1 * speedlevel7;
   }
-     circle(100, level7obstacley, 30);
+  circle(100, level7obstacley, 30);
 
   let level7obstaclebounce1 = Math.sqrt(
     (200 - ball.x) ** 2 + (level7obstacley - ball.y) ** 2
@@ -459,7 +490,7 @@ if (level7obstacley > 380 || level7obstacley < 10) {
     ball.vx = 0.1 * (ball.x - 375);
     ball.vy = 0.1 * (ball.y - 175);
   }
-    let level7obstaclebounce2= Math.sqrt(
+  let level7obstaclebounce2 = Math.sqrt(
     (100 - ball.x) ** 2 + (level7obstacley - ball.y) ** 2
   );
   if (level7obstaclebounce2 <= 20) {
@@ -467,16 +498,122 @@ if (level7obstacley > 380 || level7obstacley < 10) {
     ball.vy = 0.1 * (ball.y - 175);
   }
 }
-function level8(){
-    text("Level:" + level, 105, 5);
-
+function level8() {
+  text("Level:" + level, 105, 5);
+  console.log(level);
+  level8obstacley += speedlevel8;
+  circle(70, 94, 20);
+  circle(120, 214, 20);
+  circle(95, 154, 20);
+  let level8obstaclebounce1 = Math.sqrt(
+    (70 - ball.x) ** 2 + (94 - ball.y) ** 2
+  );
+  if (level8obstaclebounce1 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level8obstaclebounce2 = Math.sqrt(
+    (120 - ball.x) ** 2 + (214 - ball.y) ** 2
+  );
+  if (level8obstaclebounce2 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level8obstaclebounce3 = Math.sqrt(
+    (95 - ball.x) ** 2 + (154 - ball.y) ** 2
+  );
+  if (level8obstaclebounce3 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
 }
-function leveldone(){
-timerisrunning = false;
+function level9() {
+  text("Level:" + level, 105, 5);
+  console.log(level);
+  level9obstacley += speedlevel9;
+  circle(80, level9obstacley, 20);
+  circle(130, 210, 20);
+  circle(105, 150, 20);
+  if (level9obstacley > 380 || level9obstacley < 10) {
+    speedlevel9 = -1 * speedlevel9;
+  }
+  let level9obstaclebounce1 = Math.sqrt(
+    (80 - ball.x) ** 2 + (level9obstacley - ball.y) ** 2
+  );
+  if (level9obstaclebounce1 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level9obstaclebounce2 = Math.sqrt(
+    (130 - ball.x) ** 2 + (210 - ball.y) ** 2
+  );
+  if (level9obstaclebounce2 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level9obstaclebounce3 = Math.sqrt(
+    (105 - ball.x) ** 2 + (150 - ball.y) ** 2
+  );
+  if (level9obstaclebounce3 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+}
+function level10() {
+  text("Level:" + level, 105, 5);
+  console.log(level);
+  level10obstacley1 += speedlevel10;
+  level10obstacley2 += speedlevel10;
+  circle(80, level10obstacley1, 20);
+  circle(130, level10obstacley2, 20);
+  circle(105, 150, 20);
+  if (level10obstacley1 > 380) {
+    speedlevel10 = -1 * speedlevel10;
+    level10obstacley1 = 380;
+  }
+  if (level10obstacley1 < 10) {
+    speedlevel10 = -1 * speedlevel10;
+    level10obstacley1 = 10;
+  }
+  if (level10obstacley2 > 380) {
+    speedlevel10 = -1 * speedlevel10;
+    let10obstacley2 = 380;
+  }
+  if (level10obstacley2 < 10) {
+    speedlevel10 = -1 * speedlevel10;
+    let10obstacley2 = 10;
+  }
+  let level10obstaclebounce1 = Math.sqrt(
+    (80 - ball.x) ** 2 + (level10obstacley1 - ball.y) ** 2
+  );
+  if (level10obstaclebounce1 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level10obstaclebounce2 = Math.sqrt(
+    (130 - ball.x) ** 2 + (level10obstacley2 - ball.y) ** 2
+  );
+  if (level10obstaclebounce2 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+  let level10obstaclebounce3 = Math.sqrt(
+    (105 - ball.x) ** 2 + (150 - ball.y) ** 2
+  );
+  if (level10obstaclebounce3 <= 20) {
+    ball.vx = 0.1 * (ball.x - 375);
+    ball.vy = 0.1 * (ball.y - 175);
+  }
+}
+function level11() {}
+function leveldone() {
+  timerisrunning = false;
   textSize(25);
-      text(stopwatch + " is your time!", 100, 200);
-  
+  text(stopwatch + " seconds is your time!", 80, 200);
 }
+
+//Add ellipses in background to add fan movement
+//Get level to link to next once finished
 
 //Add ellipses in background to add fan movement
 //Get level to link to next once finished
