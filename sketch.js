@@ -571,7 +571,7 @@ function level10() {
   text("Level:" + level, 105, 5);
   console.log(level);
   level10obstacley1 += speedlevel10a;
-  level10obstacley2 += speedlevel10b
+  level10obstacley2 += speedlevel10b;
   circle(80, level10obstacley1, 20);
   circle(130, level10obstacley2, 20);
   circle(105, 150, 20);
@@ -584,7 +584,7 @@ function level10() {
     level10obstacley1 = 10;
   }
   if (level10obstacley2 > 380) {
-    speedlevel10b= -1 * speedlevel10b;
+    speedlevel10b = -1 * speedlevel10b;
     level10obstacley2 = 380;
   }
   if (level10obstacley2 < 10) {
@@ -630,7 +630,7 @@ function level11() {
     speedlevel11a = -1 * speedlevel11a;
     level11obstacley1 = 10;
   }
-    if (level11obstacley2 > 380) {
+  if (level11obstacley2 > 380) {
     speedlevel11b = -1 * speedlevel11b;
     level11obstacley2 = 380;
   }
@@ -638,15 +638,15 @@ function level11() {
     speedlevel11b = -1 * speedlevel11b;
     level11obstacley2 = 10;
   }
-      if (level11obstacley3 > 380) {
+  if (level11obstacley3 > 380) {
     speedlevel11c = -1 * speedlevel11c;
     level11obstacley3 = 380;
   }
- if (level11obstacley3 < 10) {
+  if (level11obstacley3 < 10) {
     speedlevel11c = -1 * speedlevel11c;
     level11obstacley3 = 10;
   }
-let level11obstaclebounce1 = Math.sqrt(
+  let level11obstaclebounce1 = Math.sqrt(
     (80 - ball.x) ** 2 + (level11obstacley1 - ball.y) ** 2
   );
   if (level11obstaclebounce1 <= 20) {
